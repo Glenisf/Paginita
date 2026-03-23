@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi niña linda</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="stars"></div> <main class="container">
+        <h1 class="main-title">Un árbol lleno de ti</h1>
+        
+        <div class="tree-container">
+            <svg class="tree-svg" viewBox="0 0 200 200">
+                <path d="M100,180 Q100,150 100,120 T100,60" stroke="#4d2e1e" stroke-width="8" fill="none"/>
+                <path d="M100,140 Q130,120 150,130" stroke="#4d2e1e" stroke-width="5" fill="none"/>
+                <path d="M100,140 Q70,120 50,130" stroke="#4d2e1e" stroke-width="5" fill="none"/>
+                <path d="M100,100 Q140,70 160,90" stroke="#4d2e1e" stroke-width="4" fill="none"/>
+                <path d="M100,100 Q60,70 40,90" stroke="#4d2e1e" stroke-width="4" fill="none"/>
+                <path d="M100,80 Q120,40 100,20 Q80,40 100,80" stroke="#4d2e1e" stroke-width="3" fill="none"/>
+                <circle cx="100" cy="40" r="30" fill="#2d5a27" opacity="0.6"/>
+                <circle cx="70" cy="70" r="25" fill="#3a7d34" opacity="0.6"/>
+                <circle cx="130" cy="70" r="25" fill="#3a7d34" opacity="0.6"/>
+                <circle cx="50" cy="110" r="20" fill="#4fa147" opacity="0.6"/>
+                <circle cx="150" cy="110" r="20" fill="#4fa147" opacity="0.6"/>
+            </svg>
+
+            <div id="hearts-layer"></div>
+        </div>
+    </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="photo-frame">
+                <img id="modal-img" src="" alt="Foto especial">
+            </div>
+            <p id="modal-text" class="phrase"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

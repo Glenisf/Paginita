@@ -1,0 +1,141 @@
+/* 1. Configuración General */
+:root {
+    --primary-pink: #ff758f;
+    --bg-soft: #fff5f7;
+    --dark-text: #333;
+    --shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Evita que la pantalla se mueva en el cel */
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* 2. Título Principal */
+.main-title {
+    position: absolute;
+    top: 30px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.2rem;
+    color: var(--primary-pink);
+    text-align: center;
+    width: 100%;
+    z-index: 10;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+/* 3. Contenedor del Árbol */
+.tree-container {
+    position: relative;
+    width: 90vw;
+    height: 75vh;
+    max-width: 400px;
+}
+
+.tree-svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+}
+
+/* 4. Los Corazones (Botones) */
+.heart {
+    position: absolute;
+    cursor: pointer;
+    font-size: 35px; /* Tamaño ideal para el dedo en celular */
+    user-select: none;
+    z-index: 20;
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.1));
+    animation: floating 3s ease-in-out infinite;
+    transition: transform 0.2s ease;
+}
+
+/* Animación para que los corazones "bailen" suavemente */
+@keyframes floating {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-12px) scale(1.1); }
+}
+
+.heart:active {
+    transform: scale(0.8); /* Efecto de pulsado al tocarlo */
+}
+
+/* 5. Ventana Emergente (Modal) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    inset: 0;
+    background-color: rgba(0,0,0,0.8);
+    backdrop-filter: blur(10px); /* Fondo borroso muy elegante */
+    padding: 20px;
+}
+
+.modal-content {
+    background: white;
+    margin: 10% auto;
+    padding: 15px;
+    width: 100%;
+    max-width: 350px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    animation: popUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popUp {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* 6. El Cuadrito de la Foto (Aquí se arregla el descuadre) */
+.photo-frame {
+    width: 100%;
+    height: 380px; /* Altura fija para que todas se vean iguales */
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la foto sin estirarla */
+    object-position: center; /* Centra la imagen */
+}
+
+/* 7. Texto y Botón Cerrar */
+.phrase {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: var(--dark-text);
+    margin: 10px 0;
+    line-height: 1.2;
+}
+
+.close-btn {
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    padding: 10px;
+}
